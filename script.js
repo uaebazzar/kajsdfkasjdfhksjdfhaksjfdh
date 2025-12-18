@@ -1,43 +1,36 @@
-// Custom Cursor Logic
-const cursor = document.querySelector('.cursor');
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add a slight delay for staggered items
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, index * 100); 
+            }
+        });
+    }, observerOptions);
 
-// Expand cursor on hover
-document.querySelectorAll('a, .project').forEach(link => {
-    link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(4)');
-    link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-});
-
-// Reveal Animation on Scroll
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
+    // Track images and text for animations
+    document.querySelectorAll('.reveal, .stagger').forEach(el => {
+        observer.observe(el);
     });
-}, observerOptions);
 
-// Add basic CSS for the reveal effect via JS
-const style = document.createElement('style');
-style.innerHTML = `
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
-    }
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Simple parallax effect for images on scroll
+    window.addEventListener('scroll', () => {
+        const images = document.querySelectorAll('.img-space img');
+        images.forEach(img => {
+            const speed = 0.05;
+            const rect = img.parentElement.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const shift = (window.innerHeight - rect.top) * speed;
+                img.style.transform = `scale(1.1) translateY(${shift}px)`;
+            }
+        });
+    });
+});
