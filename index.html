@@ -3,69 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>S — Digital Experience</title>
+    
+    <link rel="icon" type="image/png" href="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(1)-Photoroom.png?updatedAt=1766046663294">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000;
             margin: 0;
+            letter-spacing: -0.02em;
         }
 
-        /* Subtle background glow to make the logo pop */
+        /* Subtle ambient glow */
         .bg-glow {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
             z-index: 0;
             pointer-events: none;
         }
 
-        .fade-in {
-            animation: fadeIn 1.2s ease-out forwards;
+        .reveal {
+            animation: reveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(30px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .btn-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .btn-hover:hover {
+            background-color: #f3f4f6;
+            letter-spacing: 0.2em;
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen text-white px-6">
+<body class="flex items-center justify-center min-h-screen text-white px-6 overflow-hidden">
 
     <div class="bg-glow"></div>
 
-    <main class="relative z-10 text-center fade-in">
-        <div class="flex justify-center mb-10">
+    <main class="relative z-10 text-center reveal">
+        <div class="flex justify-center mb-12">
             <img 
                 src="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(2)-Photoroom.png?updatedAt=1766053409883" 
                 alt="Logo" 
-                class="w-36 h-36 md:w-44 md:h-44 object-contain"
+                class="w-32 md:w-40 object-contain brightness-110"
             >
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-semibold tracking-tight mb-4">
-            Coming Soon
+        <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 leading-none">
+            Built for <span class="text-gray-400 font-light italic">Next.</span>
         </h1>
 
-        <p class="text-gray-400 text-lg md:text-xl max-w-sm mx-auto mb-10 font-light leading-relaxed">
-            We're currently under construction. <br> Reach out to us directly.
+        <p class="text-gray-500 text-base md:text-lg max-w-xs mx-auto mb-14 font-light tracking-wide leading-relaxed">
+            Redefining the digital landscape. <br> Currently by invitation only.
         </p>
 
         <a 
             href="https://wa.me/971564735275" 
             target="_blank" 
-            class="inline-block bg-white text-black font-semibold px-10 py-4 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 active:scale-95 text-base"
+            class="btn-hover inline-block bg-white text-black font-semibold px-14 py-4 rounded-full text-[10px] uppercase tracking-[0.15em] shadow-2xl"
         >
-            Contact
+            Connect
         </a>
     </main>
+
+    <footer class="absolute bottom-10 w-full text-center text-[10px] text-gray-700 tracking-[0.3em] uppercase">
+        © 2024 All Rights Reserved
+    </footer>
 
 </body>
 </html>
