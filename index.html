@@ -3,64 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selected Works / 2025</title>
+    <title>IAMSEKANDAR — 2025</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="desktop-view">
-        <div class="message">
-            <h1>TO BE<br>CONTINUED<b>.</b></h1>
-            <p>MOBILE EXPERIENCE ONLY</p>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">SEKANDAR<b>©</b></a>
+            <div class="nav-links">
+                <a href="#work" class="hover-target">WORK</a>
+                <a href="#services" class="hover-target">SERVICES</a>
+                <a href="#about" class="hover-target">ABOUT</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="mobile-portfolio">
-        <nav>
-            <span>INDEX</span>
-            <span>MENU</span>
-        </nav>
-
+    <main>
         <section class="hero">
-            <h1 class="stagger">DESIGN<br>DRIVEN<br>CODE<b>.</b></h1>
-            <div class="hero-footer stagger">
-                <p>SELECTED WORKS<br>VOL. 01</p>
-                <div class="scroll-indicator"></div>
+            <div class="hero-title">
+                <h1 class="reveal-up">IAM</h1>
+                <h1 class="reveal-up delay-1">SEKANDAR</h1>
+            </div>
+            <div class="hero-footer fade-in">
+                <span>CREATIVE DEVELOPER / DESIGNER</span>
+                <span>BASED IN DUBAI — GLOBAL</span>
             </div>
         </section>
 
-        <section class="work">
-            <div class="project-item">
-                <div class="img-space reveal">
-                    <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=1000&auto=format" alt="Project">
+        <section id="work" class="section work">
+            <div class="project-item" data-cursor-text="VIEW">
+                <div class="img-wrapper reveal-clip">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" alt="Project">
                 </div>
-                <div class="project-meta stagger">
-                    <h2>01. KINETIC</h2>
-                    <p>IDENTITY / 2025</p>
+                <div class="project-details fade-in">
+                    <h3>01 / MODERNIST ARCHIVE</h3>
+                    <p>UI/UX & MOTION</p>
                 </div>
             </div>
 
-            <div class="project-item">
-                <div class="img-space reveal">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format" alt="Project">
+            <div class="project-item alt" data-cursor-text="VIEW">
+                <div class="img-wrapper reveal-clip">
+                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1600&q=80" alt="Project">
                 </div>
-                <div class="project-meta stagger">
-                    <h2>02. VOID</h2>
-                    <p>PLATFORM / 2024</p>
+                <div class="project-details fade-in">
+                    <h3>02 / THE VOID ENGINE</h3>
+                    <p>INTERACTION DESIGN</p>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <h2 class="stagger">LET'S TALK<b>.</b></h2>
-            <a href="#" class="stagger">HELLO@YOURDOMAIN.COM</a>
-            <div class="footer-bottom">
-                <p>© 2025</p>
-                <p>BACK TO TOP ↑</p>
+        <section id="services" class="section services">
+            <h2 class="label fade-in">CAPABILITIES</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3>ART DIRECTION</h3>
+                    <p>Visual storytelling and brand identity for the digital age.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <h3>DEVELOPMENT</h3>
+                    <p>High-performance front-end systems built with modern stacks.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <h3>STRATEGY</h3>
+                    <p>Connecting the dots between user needs and business goals.</p>
+                </div>
             </div>
-        </footer>
-    </div>
+        </section>
+
+        <section class="section experience">
+            <h2 class="label fade-in">EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in hover-target">
+                    <span class="year">2025</span>
+                    <span class="role">SENIOR DEVELOPER</span>
+                    <span class="comp">STUDIO X</span>
+                </div>
+                <div class="timeline-item fade-in hover-target">
+                    <span class="year">2023</span>
+                    <span class="role">VISUAL DESIGNER</span>
+                    <span class="comp">NOVA LABS</span>
+                </div>
+                <div class="timeline-item fade-in hover-target">
+                    <span class="year">2021</span>
+                    <span class="role">UI INTERN</span>
+                    <span class="comp">CREATIVE CO.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section contact">
+            <div class="contact-wrap">
+                <p class="fade-in">NEED A PARTNER?</p>
+                <a href="mailto:hello@sekandar.com" class="big-link hover-target fade-in">LET'S TALK</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="hover-target">INSTAGRAM</a>
+            <a href="#" class="hover-target">LINKEDIN</a>
+            <a href="#" class="hover-target">GITHUB</a>
+        </div>
+        <p>© 2025 IAMSEKANDAR</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
