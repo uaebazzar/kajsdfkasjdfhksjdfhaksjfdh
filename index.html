@@ -3,116 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAMSEKANDAR — 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Coming Soon | Stay Tuned</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+        }
+    </style>
 </head>
-<body>
-
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">SEKANDAR<b>©</b></a>
-            <div class="nav-links">
-                <a href="#work" class="hover-target">WORK</a>
-                <a href="#services" class="hover-target">SERVICES</a>
-                <a href="#about" class="hover-target">ABOUT</a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="hero-title">
-                <h1 class="reveal-up">IAM</h1>
-                <h1 class="reveal-up delay-1">SEKANDAR</h1>
-            </div>
-            <div class="hero-footer fade-in">
-                <span>CREATIVE DEVELOPER / DESIGNER</span>
-                <span>BASED IN DUBAI — GLOBAL</span>
-            </div>
-        </section>
-
-        <section id="work" class="section work">
-            <div class="project-item" data-cursor-text="VIEW">
-                <div class="img-wrapper reveal-clip">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" alt="Project">
-                </div>
-                <div class="project-details fade-in">
-                    <h3>01 / MODERNIST ARCHIVE</h3>
-                    <p>UI/UX & MOTION</p>
-                </div>
-            </div>
-
-            <div class="project-item alt" data-cursor-text="VIEW">
-                <div class="img-wrapper reveal-clip">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1600&q=80" alt="Project">
-                </div>
-                <div class="project-details fade-in">
-                    <h3>02 / THE VOID ENGINE</h3>
-                    <p>INTERACTION DESIGN</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="section services">
-            <h2 class="label fade-in">CAPABILITIES</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <h3>ART DIRECTION</h3>
-                    <p>Visual storytelling and brand identity for the digital age.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <h3>DEVELOPMENT</h3>
-                    <p>High-performance front-end systems built with modern stacks.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <h3>STRATEGY</h3>
-                    <p>Connecting the dots between user needs and business goals.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section experience">
-            <h2 class="label fade-in">EXPERIENCE</h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in hover-target">
-                    <span class="year">2025</span>
-                    <span class="role">SENIOR DEVELOPER</span>
-                    <span class="comp">STUDIO X</span>
-                </div>
-                <div class="timeline-item fade-in hover-target">
-                    <span class="year">2023</span>
-                    <span class="role">VISUAL DESIGNER</span>
-                    <span class="comp">NOVA LABS</span>
-                </div>
-                <div class="timeline-item fade-in hover-target">
-                    <span class="year">2021</span>
-                    <span class="role">UI INTERN</span>
-                    <span class="comp">CREATIVE CO.</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section contact">
-            <div class="contact-wrap">
-                <p class="fade-in">NEED A PARTNER?</p>
-                <a href="mailto:hello@sekandar.com" class="big-link hover-target fade-in">LET'S TALK</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-links">
-            <a href="#" class="hover-target">INSTAGRAM</a>
-            <a href="#" class="hover-target">LINKEDIN</a>
-            <a href="#" class="hover-target">GITHUB</a>
-        </div>
-        <p>© 2025 IAMSEKANDAR</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<body class="flex items-center justify-center min-h-screen text-white overflow-hidden">
