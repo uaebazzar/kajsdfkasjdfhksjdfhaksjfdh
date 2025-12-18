@@ -1,210 +1,177 @@
 <!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS OS — Portfolio</title>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>NEXUS OS Project Portfolio</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Spline+Sans+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Config -->
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#36e27b",
-                        "background-light": "#f6f8f7",
-                        "background-dark": "#112117",
-                        "surface-dark": "#1b3224",
-                        "border-dark": "#254632",
-                    },
-                    fontFamily: {
-                        "display": ["Spline Sans", "sans-serif"],
-                        "mono": ["Spline Sans Mono", "monospace"],
-                    },
-                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-                },
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            black: "#000000",
+            white: "#ffffff",
+            gray: {
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
             },
-        }
-    </script>
-<style>
-        /* Custom grid lines for the background effect */
-        .bg-grid-pattern {
-            background-image: linear-gradient(to right, #254632 1px, transparent 1px),
-                              linear-gradient(to bottom, #254632 1px, transparent 1px);
-            background-size: 80px 80px; /* Adjust size for grid density */
-            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-        }
-    </style>
+          },
+          fontFamily: {
+            display: ["Spline Sans", "sans-serif"],
+            mono: ["Spline Sans Mono", "monospace"],
+          },
+        },
+      },
+    }
+  </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased overflow-x-hidden">
-<div class="relative min-h-screen flex flex-col">
-<!-- Subtle Grid Background Overlay -->
-<div class="absolute inset-0 z-0 pointer-events-none opacity-20 bg-grid-pattern"></div>
-<!-- Top Navigation (Component Modified) -->
-<div class="relative z-10 w-full border-b border-solid border-border-dark bg-background-dark/80 backdrop-blur-sm">
-<div class="mx-auto max-w-[1440px] px-6 lg:px-12 py-4">
-<header class="flex items-center justify-between whitespace-nowrap">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-[24px]">grid_view</span>
+
+<body class="bg-black text-white font-display antialiased">
+<div class="min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <header class="border-b border-gray-800">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-gray-400">grid_view</span>
+        <span class="font-semibold tracking-widest text-sm">NEXUS OS</span>
+      </div>
+
+      <nav class="hidden md:flex gap-10 text-sm text-gray-400">
+        <a class="hover:text-white transition">PROJECTS</a>
+        <a class="hover:text-white transition">ABOUT</a>
+        <a class="hover:text-white transition">CONTACT</a>
+      </nav>
+
+      <button class="border border-white px-6 py-2 text-sm tracking-widest hover:bg-white hover:text-black transition">
+        DOWNLOAD KIT
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+
+    <!-- META -->
+    <p class="font-mono text-xs tracking-widest text-gray-400 mb-24 border-l border-gray-700 pl-4">
+      01 / ARCHITECTURAL VISION
+    </p>
+
+    <!-- HERO -->
+    <h1 class="text-[clamp(3rem,7vw,7rem)] font-semibold tracking-tight leading-[0.95] max-w-[90%] mb-32">
+      The interface <span class="text-gray-500">vanishes</span> the moment the user begins to
+      <span class="underline underline-offset-8 decoration-gray-600">create</span>.
+    </h1>
+
+    <!-- GRID -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-24 border-t border-gray-800 pt-16">
+
+      <!-- LEFT -->
+      <div class="lg:col-span-8 space-y-16">
+
+        <div>
+          <h2 class="text-4xl font-semibold uppercase mb-6">Design Philosophy</h2>
+          <p class="text-gray-400 text-lg max-w-[800px] leading-relaxed">
+            The Luxury of Silence. In an era of notification overload, true luxury is the absence of noise.
+            Nexus OS strips interfaces down to structure, intent, and clarity.
+          </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">diamond</span>
+            <h3 class="uppercase font-semibold tracking-wider">Utility First</h3>
+            <p class="text-gray-400 text-sm">Every pixel has a purpose.</p>
+          </div>
+
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">grid_4x4</span>
+            <h3 class="uppercase font-semibold tracking-wider">Swiss Grid</h3>
+            <p class="text-gray-400 text-sm">Mathematical precision.</p>
+          </div>
+
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">contrast</span>
+            <h3 class="uppercase font-semibold tracking-wider">Monochrome</h3>
+            <p class="text-gray-400 text-sm">Contrast over color.</p>
+          </div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="relative h-[420px] overflow-hidden border border-gray-800">
+          <img class="w-full h-full object-cover grayscale contrast-125" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+          <div class="absolute bottom-0 left-0 w-full p-6 bg-black/70">
+            <p class="font-mono text-xs text-gray-400">FIG 1.0 — MATERIALITY</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="lg:col-span-4 lg:border-l lg:border-gray-800 lg:pl-12 space-y-12">
+
+        <div>
+          <p class="font-mono text-xs tracking-widest text-gray-500 mb-6">TECHNICAL EXECUTION</p>
+          <ul class="space-y-6 text-sm">
+            <li>
+              <p class="text-gray-500 font-mono text-xs">FRAMEWORK</p>
+              React / WebGL
+            </li>
+            <li>
+              <p class="text-gray-500 font-mono text-xs">TYPOGRAPHY</p>
+              Spline Sans Mono
+            </li>
+            <li>
+              <p class="text-gray-500 font-mono text-xs">GRID</p>
+              12 Column Fluid
+            </li>
+            <li>
+              <p class="text-gray-500 font-mono text-xs">VERSION</p>
+              Alpha v0.9
+            </li>
+          </ul>
+        </div>
+
+        <button class="w-full border border-white py-4 tracking-widest hover:bg-white hover:text-black transition">
+          VIEW PROTOTYPE →
+        </button>
+
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 py-8">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex justify-between text-xs font-mono text-gray-500">
+      <span>© 2024 NEXUS SYSTEMS</span>
+      <div class="flex gap-6">
+        <a class="hover:text-white">INSTAGRAM</a>
+        <a class="hover:text-white">TWITTER</a>
+        <a class="hover:text-white">LINKEDIN</a>
+      </div>
+    </div>
+  </footer>
+
 </div>
-<h2 class="text-white text-lg font-bold leading-tight tracking-wider">NEXUS OS</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<div class="hidden md:flex items-center gap-9">
-<a class="text-gray-400 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">PROJECTS</a>
-<a class="text-gray-400 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">ABOUT</a>
-<a class="text-gray-400 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">CONTACT</a>
-</div>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-white hover:text-black transition-all duration-300 text-[#122118] text-sm font-bold leading-normal tracking-wide">
-<span class="truncate">DOWNLOAD_KIT</span>
-</button>
-</div>
-</header>
-</div>
-</div>
-<!-- Main Content Wrapper -->
-<main class="relative z-10 flex-grow flex flex-col px-6 lg:px-12 py-12 lg:py-24 mx-auto w-full max-w-[1440px]">
-<!-- Meta Label (Component Modified) -->
-<div class="mb-12 lg:mb-24 fade-in-up">
-<p class="font-mono text-primary text-sm font-semibold tracking-wider uppercase border-l-2 border-primary pl-4">
-                    01 / ARCHITECTURAL VISION
-                </p>
-</div>
-<!-- Massive Hero Quote (Component Modified) -->
-<div class="mb-24 lg:mb-32 fade-in-up delay-100">
-<h1 class="text-white tracking-tighter text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[0.9] max-w-[90%]">
-                    The interface <span class="text-gray-600">vanishes</span> the moment the user begins to <span class="text-primary">create</span>.
-                </h1>
-</div>
-<!-- Two Column Layout: Philosophy vs Specs -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 border-t border-border-dark pt-12">
-<!-- Wide Column: Design Philosophy (FeatureSection Component Modified) -->
-<div class="lg:col-span-8 flex flex-col gap-12">
-<div class="flex flex-col gap-6">
-<h2 class="text-white tracking-tight text-4xl font-bold uppercase">
-                            Design Philosophy
-                        </h2>
-<p class="text-gray-400 text-lg md:text-xl font-normal leading-relaxed max-w-[800px]">
-                            The Luxury of Silence: In an era of notification overload, true luxury is the absence of noise. Nexus OS prioritizes raw data and user intent, stripping away decorative elements to reveal the brutalist structure underneath. We believe that tools should recede, leaving only the canvas and the creator.
-                        </p>
-</div>
-<!-- Philosophy Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-<div class="flex flex-col gap-4 p-6 rounded-lg bg-surface-dark border border-border-dark hover:border-primary/50 transition-colors group">
-<span class="material-symbols-outlined text-white text-[32px] group-hover:text-primary transition-colors">diamond</span>
-<div class="flex flex-col gap-2">
-<h3 class="text-white text-lg font-bold uppercase tracking-wide">Utility-First</h3>
-<p class="text-gray-400 text-sm leading-relaxed">Every pixel serves a function. Decoration is error.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-6 rounded-lg bg-surface-dark border border-border-dark hover:border-primary/50 transition-colors group">
-<span class="material-symbols-outlined text-white text-[32px] group-hover:text-primary transition-colors">grid_4x4</span>
-<div class="flex flex-col gap-2">
-<h3 class="text-white text-lg font-bold uppercase tracking-wide">Swiss Grid</h3>
-<p class="text-gray-400 text-sm leading-relaxed">Mathematical 12-column alignment for absolute precision.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-6 rounded-lg bg-surface-dark border border-border-dark hover:border-primary/50 transition-colors group">
-<span class="material-symbols-outlined text-white text-[32px] group-hover:text-primary transition-colors">contrast</span>
-<div class="flex flex-col gap-2">
-<h3 class="text-white text-lg font-bold uppercase tracking-wide">Monochrome</h3>
-<p class="text-gray-400 text-sm leading-relaxed">High contrast, zero distraction. Content is king.</p>
-</div>
-</div>
-</div>
-<!-- Image Section -->
-<div class="mt-12 w-full h-[400px] rounded-lg overflow-hidden relative group">
-<img alt="Abstract minimal brutalist architecture concrete wall texture" class="w-full h-full object-cover filter grayscale contrast-125 brightness-75 group-hover:grayscale-0 transition-all duration-700" data-alt="Abstract minimal brutalist architecture concrete wall texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWLtLTyMLdkeZwLV5JzluEuac8Bv0AOY3uVVgrkyPOkuwEPScAdmkvy7G6McbAIBfbLaIWDNF-W5sTQEjLVP3gAOkygF-ZrWQX9NLukfFUCc60H5lw5cwCXrNzS4k8DbqDN0mwlqIeLEnNjPVEcm37C2ycARDAlhhPwH4iDTnWQnDSooGBn-PKumdqwpNN1clqa12J8fq4OVNEYrwfUvGy9at7PkhCEnCSw3Eqts1JOXDH8tvFglWwx2Kh27KzqnPCR7uzeP4U1Fw"/>
-<div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
-<p class="font-mono text-xs text-primary">FIG 1.0 — MATERIALITY</p>
-</div>
-</div>
-</div>
-<!-- Narrow Sidebar: Technical Execution (DescriptionList Component Modified) -->
-<div class="lg:col-span-4 lg:border-l lg:border-border-dark lg:pl-12 flex flex-col gap-10">
-<h3 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-2">Technical Execution</h3>
-<div class="flex flex-col gap-0 divide-y divide-border-dark">
-<div class="py-4 flex flex-col gap-1">
-<p class="text-gray-500 text-xs font-mono uppercase">Framework</p>
-<p class="text-white text-base font-medium">React / WebGL</p>
-</div>
-<div class="py-4 flex flex-col gap-1">
-<p class="text-gray-500 text-xs font-mono uppercase">Typography</p>
-<p class="text-white text-base font-medium">Spline Sans Mono</p>
-</div>
-<div class="py-4 flex flex-col gap-1">
-<p class="text-gray-500 text-xs font-mono uppercase">Grid System</p>
-<p class="text-white text-base font-medium">12-Column Fluid</p>
-</div>
-<div class="py-4 flex flex-col gap-1">
-<p class="text-gray-500 text-xs font-mono uppercase">Version</p>
-<p class="text-white text-base font-medium flex items-center gap-2">
-                                Alpha v0.9 
-                                <span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
-</p>
-</div>
-<div class="py-4 flex flex-col gap-1">
-<p class="text-gray-500 text-xs font-mono uppercase">Contributors</p>
-<div class="flex -space-x-2 mt-2">
-<img alt="Team member portrait placeholder" class="inline-block h-8 w-8 rounded-full ring-2 ring-background-dark grayscale" data-alt="Team member portrait placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJASGRzCUS1gIFxjOeXav2VUH9_oyrGl15ivPoSmAY4Zu5awwQXi7Hr5RmegOrZMLxiSB_gJaoRSkUBy6WFkGU_85Rq3mgqdaZf7ls-3QAvhuc6IhTmC_dkAKUIHU-HQnBRaoM5ZbUt6NCTPx1i_MqtL-ks0uwCUT5b7XQ_JOH8BD62AVam6u3H0ijSsFjOpI2oTvsQT9-7aj5zL5hD-AIj5pFMoj18flqmqNgXdpD-usVPsXFLnsNNHbQH5Zrz4jRnT-zEM-hWac"/>
-<img alt="Team member portrait placeholder" class="inline-block h-8 w-8 rounded-full ring-2 ring-background-dark grayscale" data-alt="Team member portrait placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKQPyw9jkFUYa7aaB5eZ09AU3bX-I_uwHr-uMSmFYevJO40Y3Bi_wUW8XrTKOlJKV4Ncp8REfZ5g9h9eWoTB2pepd3igMXaJCfZjp373h_kKBL84U88PKB7nCH4JZ-Hjl6eBb-DSqa2jW51GVo7ERl4HT2mapscDpxpo8JdKMVJ7NzFX6ilRhKcxEH_HDJGurHT6uH2WGtjlAKbol_uNrqudCfM7oGpgcXUUpFejhcIIVxIFVoYDtSq-hb8v835C7rs5_qRDH4gS8"/>
-<img alt="Team member portrait placeholder" class="inline-block h-8 w-8 rounded-full ring-2 ring-background-dark grayscale" data-alt="Team member portrait placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZrzsxV3Opsslre-8hgG2yqSNrlQIpZBRrlO9bd-_47dshKRF-voC_Zi6f2I60CWfqIegpx9rY4Fljoouk8LaM-heiVuTniOmatk-mjAwFZtfuvVzUL12MzxfR_n2n3Ez7JBzEmCvd_utgAocjf2PQTJGQfmpdNfZTtiVHpkr9jmlXo5aMVQl_BcCzIU3ZuaTAWcDhbW7aJsVE_EcIfonv212AiaiYvoJiyh5nhHuqpD48xSrrPjCyUJTw4w7672YEdejSZ56C1Q"/>
-<div class="h-8 w-8 rounded-full ring-2 ring-background-dark bg-surface-dark flex items-center justify-center text-[10px] text-white font-mono border border-border-dark">+5</div>
-</div>
-</div>
-</div>
-<div class="mt-8 pt-8 border-t border-border-dark">
-<h3 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-6">Process Metrics</h3>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between text-xs font-mono mb-2 text-gray-400">
-<span>PERFORMANCE</span>
-<span>98/100</span>
-</div>
-<div class="w-full bg-surface-dark rounded-full h-1">
-<div class="bg-primary h-1 rounded-full" style="width: 98%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-xs font-mono mb-2 text-gray-400">
-<span>ACCESSIBILITY</span>
-<span>100/100</span>
-</div>
-<div class="w-full bg-surface-dark rounded-full h-1">
-<div class="bg-primary h-1 rounded-full" style="width: 100%"></div>
-</div>
-</div>
-</div>
-</div>
-<button class="mt-auto w-full group flex items-center justify-between p-4 bg-transparent border border-border-dark rounded-lg hover:bg-primary hover:border-primary transition-all duration-300">
-<span class="font-mono text-sm text-white group-hover:text-black font-bold">VIEW PROTOTYPE</span>
-<span class="material-symbols-outlined text-white group-hover:text-black">arrow_outward</span>
-</button>
-</div>
-</div>
-</main>
-<footer class="border-t border-border-dark bg-background-dark relative z-10">
-<div class="mx-auto max-w-[1440px] px-6 lg:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-gray-500 text-sm font-mono">© 2024 NEXUS SYSTEMS INC.</p>
-<div class="flex gap-6">
-<a class="text-gray-500 hover:text-primary transition-colors text-sm font-mono" href="#">INSTAGRAM</a>
-<a class="text-gray-500 hover:text-primary transition-colors text-sm font-mono" href="#">TWITTER</a>
-<a class="text-gray-500 hover:text-primary transition-colors text-sm font-mono" href="#">LINKEDIN</a>
-</div>
-</div>
-</footer>
-</div>
-</body></html>
+</body>
+</html>
