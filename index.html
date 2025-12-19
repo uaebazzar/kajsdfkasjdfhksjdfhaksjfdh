@@ -3,21 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sekandar — Liquid Glass Archive</title>
+    <title>Sekandar — Digital Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         :root {
-            /* High-Intensity Liquid Glass Properties */
-            --glass-surface: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --liquid-blur: blur(45px);
+            --glass: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --liquid-blur: blur(40px);
         }
 
         body {
-            background-color: #020202;
+            background-color: #050505;
             color: #ffffff;
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
@@ -25,54 +24,46 @@
             cursor: none;
         }
 
-        /* The Master Liquid Glass Class */
-        .liquid-glass {
-            background: var(--glass-surface) !important;
-            backdrop-filter: var(--liquid-blur) saturate(200%) brightness(1.1) !important;
-            -webkit-backdrop-filter: var(--liquid-blur) saturate(200%) brightness(1.1) !important;
-            border: 1px solid var(--glass-border) !important;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        /* Pure Liquid Glass Class */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: var(--liquid-blur) saturate(180%);
+            -webkit-backdrop-filter: var(--liquid-blur) saturate(180%);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
         }
 
-        .liquid-glass:hover {
-            background: rgba(255, 255, 255, 0.06) !important;
-            border-color: rgba(255, 255, 255, 0.3) !important;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        .glass:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
         }
 
-        /* Refractive Text Backgrounds */
-        .glass-pill {
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        /* Cursor - Your Favorite */
+        /* Cursor Logic */
         #cursor {
             position: fixed;
-            width: 20px; height: 20px;
+            width: 20px;
+            height: 20px;
             background: #fff;
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            transition: transform 0.1s ease-out;
+            transition: transform 0.15s ease-out;
         }
 
-        /* Background Mesh - Moves behind the glass */
-        .bg-mesh {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 20% 30%, #1a1a1a 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, #0f0f0f 0%, transparent 40%);
+        /* Smooth Section Layout */
+        section {
+            padding: 120px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Social Dock Styling */
+        .text-gradient {
+            background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Social Dock */
         .social-dock {
             position: fixed;
             bottom: 30px;
@@ -80,136 +71,133 @@
             transform: translateX(-50%);
             z-index: 100;
             display: flex;
-            gap: 10px;
-            padding: 10px;
+            gap: 12px;
+            padding: 12px;
             border-radius: 24px;
         }
 
         .social-icon {
-            width: 50px; height: 50px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 18px;
-            font-size: 22px;
+            border-radius: 16px;
+            font-size: 20px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .social-icon:hover {
-            background: #fff !important;
-            color: #000 !important;
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            background: #fff;
+            color: #000;
         }
 
+        /* Buttons */
         .btn-main {
-            padding: 12px 30px;
+            padding: 14px 28px;
             border-radius: 100px;
-            font-size: 11px;
-            font-weight: 800;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .text-refraction {
-            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            transition: all 0.3s;
         }
     </style>
 </head>
 <body>
 
     <div id="cursor"></div>
-    <div class="bg-mesh"></div>
 
-    <nav class="fixed top-0 w-full z-[100] px-6 py-6">
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="liquid-glass flex items-center gap-3 px-5 py-2 rounded-2xl">
-                <div class="w-6 h-6 rounded bg-white flex items-center justify-center text-black text-[10px] font-bold italic">S</div>
-                <span class="tracking-widest text-[10px] font-bold">SEKANDAR.DEV</span>
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg glass flex items-center justify-center font-bold italic">S</div>
+                <span class="tracking-widest text-xs font-bold opacity-70">SEKANDAR.DEV</span>
             </div>
-            
-            <div class="liquid-glass px-10 py-4 rounded-full hidden md:flex gap-10 text-[9px] font-black uppercase tracking-[0.3em] opacity-80">
-                <a href="#work" class="hover:text-white transition">Portfolio</a>
-                <a href="#about" class="hover:text-white transition">Strategy</a>
-                <a href="#contact" class="hover:text-white transition">Network</a>
+            <div class="glass px-8 py-3 rounded-full hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
+                <a href="#work" class="hover:opacity-100 transition">Work</a>
+                <a href="#about" class="hover:opacity-100 transition">About</a>
+                <a href="#contact" class="hover:opacity-100 transition">Contact</a>
             </div>
-
-            <button onclick="window.open('https://wa.me/971564735275')" class="liquid-glass btn-main hover:bg-white hover:text-black">
+            <button onclick="window.open('https://wa.me/971564735275')" class="glass btn-main hover:bg-white hover:text-black">
                 Connect
             </button>
         </div>
     </nav>
 
-    <div class="social-dock liquid-glass">
-        <a href="#" class="social-icon liquid-glass"><i class="ph ph-instagram-logo"></i></a>
-        <a href="#" class="social-icon liquid-glass"><i class="ph ph-twitter-logo"></i></a>
-        <a href="#" class="social-icon liquid-glass"><i class="ph ph-linkedin-logo"></i></a>
-        <a href="#" class="social-icon liquid-glass"><i class="ph ph-github-logo"></i></a>
+    <div class="social-dock glass">
+        <a href="#" class="social-icon glass"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#" class="social-icon glass"><i class="ph ph-twitter-logo"></i></a>
+        <a href="#" class="social-icon glass"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="social-icon glass"><i class="ph ph-github-logo"></i></a>
     </div>
 
     <main class="max-w-7xl mx-auto px-6">
         
         <section class="min-h-screen flex flex-col justify-center">
-            <div class="liquid-glass glass-pill w-fit mb-8 flex items-center gap-3">
-                <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-                <span>System Active 2025</span>
+            <div class="inline-flex items-center gap-2 mb-8 glass px-4 py-1.5 rounded-full w-fit">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-mono uppercase tracking-widest opacity-60">Available for projects</span>
             </div>
-            <h1 class="text-[clamp(3.5rem,11vw,8rem)] font-extrabold leading-[0.85] tracking-tighter text-refraction mb-10">
-                LIQUID <br/> SOLUTIONS <br/> ARCHITECT.
+            <h1 class="text-[clamp(3rem,10vw,7.5rem)] font-extrabold leading-[0.9] tracking-tighter text-gradient mb-10">
+                CRAFTING <br/> DIGITAL <br/> IMPACT.
             </h1>
-            <p class="text-xl md:text-3xl text-gray-400 max-w-2xl font-light leading-relaxed">
-                Building digital ecosystems with <span class="text-white">mathematical precision</span> and <span class="text-white">frosted aesthetics</span>.
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl font-light leading-relaxed">
+                Sekandar is a personal brand focused on building digital products, modern brands, and solutions with long-term vision.
             </p>
         </section>
 
-        <section id="work" class="py-24 border-t border-white/5">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="liquid-glass p-12 rounded-[40px] space-y-6">
-                    <div class="w-12 h-12 liquid-glass rounded-xl flex items-center justify-center"><i class="ph ph-cube text-xl"></i></div>
-                    <h3 class="text-2xl font-bold">Utility Core</h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">Every element is a functional node. No decorative fluff, just raw purpose behind glass panels.</p>
+        <section id="work">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <h2 class="text-5xl font-bold tracking-tighter">Design Philosophy</h2>
+                <p class="text-gray-500 max-w-sm text-sm uppercase tracking-widest font-mono">01 / Methodology</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-10 rounded-[32px] space-y-6">
+                    <i class="ph ph-pencil-circle text-4xl opacity-40"></i>
+                    <h3 class="text-2xl font-bold">Utility First</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">Every pixel has a purpose. We strip interfaces down to structure, intent, and absolute clarity.</p>
                 </div>
-                <div class="liquid-glass p-12 rounded-[40px] space-y-6">
-                    <div class="w-12 h-12 liquid-glass rounded-xl flex items-center justify-center"><i class="ph ph-intersect text-xl"></i></div>
+                <div class="glass p-10 rounded-[32px] space-y-6">
+                    <i class="ph ph-grid-four text-4xl opacity-40"></i>
                     <h3 class="text-2xl font-bold">Swiss Grid</h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">Rigid structural foundations ensure timeless digital balance across all refractive layers.</p>
+                    <p class="text-gray-400 leading-relaxed font-light">Mathematical precision. Our layouts are built on rigid foundations for timeless digital balance.</p>
                 </div>
-                <div class="liquid-glass p-12 rounded-[40px] space-y-6">
-                    <div class="w-12 h-12 liquid-glass rounded-xl flex items-center justify-center"><i class="ph ph-framer-logo text-xl"></i></div>
-                    <h3 class="text-2xl font-bold">Pure Contrast</h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">Using depth and opacity to create hierarchy instead of distracting color palettes.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-12">
-            <div class="liquid-glass p-4 rounded-[50px]">
-                <div class="relative h-[600px] rounded-[40px] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="w-full h-full object-cover grayscale opacity-40" alt="Work">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                    <div class="absolute bottom-16 left-16">
-                        <div class="liquid-glass glass-pill w-fit mb-6">Nexus OS / Case Study</div>
-                        <h2 class="text-5xl md:text-7xl font-bold text-refraction mb-10 tracking-tighter">MATERIALITY.</h2>
-                        <button class="liquid-glass btn-main hover:bg-white hover:text-black">Access Protocol</button>
-                    </div>
+                <div class="glass p-10 rounded-[32px] space-y-6">
+                    <i class="ph ph-drop text-4xl opacity-40"></i>
+                    <h3 class="text-2xl font-bold">Liquid Depth</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">Contrast over color. Using glass-morphism to create layers and hierarchy in a minimal space.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-40 text-center">
-            <div class="liquid-glass inline-block px-10 py-20 rounded-[80px] w-full">
-                <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-refraction mb-12 italic">INITIATE.</h2>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <button onclick="window.location.href='mailto:hello@sekandar.dev'" class="liquid-glass btn-main px-12 py-6 hover:bg-white hover:text-black">Email Dossier</button>
-                    <button onclick="window.open('https://wa.me/971564735275')" class="liquid-glass btn-main px-12 py-6 bg-white !text-black">WhatsApp Direct</button>
+        <section>
+            <div class="glass rounded-[48px] overflow-hidden group relative">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="w-full h-[600px] object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" alt="Materiality">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-12 left-12">
+                    <p class="font-mono text-xs opacity-50 uppercase tracking-[0.3em] mb-4">Case Study</p>
+                    <h3 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8">NEXUS OS — <br/>MATERIAL DESIGN.</h3>
+                    <button class="glass btn-main hover:bg-white hover:text-black">View Project</button>
                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="text-center py-40 border-none">
+            <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-gradient mb-12 italic">LET'S TALK.</h2>
+            <p class="text-gray-500 mb-12 max-w-xl mx-auto">Whether you have a question or a project in mind, my inbox is always open for visionaries.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="window.location.href='mailto:hello@sekandar.dev'" class="glass btn-main px-12 py-6">Send Email</button>
+                <button onclick="window.open('https://wa.me/971564735275')" class="bg-white text-black btn-main px-12 py-6">WhatsApp</button>
             </div>
         </section>
 
     </main>
 
-    <footer class="py-20 text-center opacity-30 text-[9px] font-mono tracking-[0.5em] uppercase">
-        © 2025 Sekandar / The Luxury of Silence
+    <footer class="py-20 text-center opacity-30 text-[10px] font-mono tracking-[0.5em] uppercase">
+        © 2025 Sekandar Brand — All Rights Reserved
     </footer>
 
     <script>
@@ -217,19 +205,18 @@
         
         // Smooth Cursor Movement
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.clientX - 10}px`;
-            cursor.style.top = `${e.clientY - 10}px`;
+            cursor.style.transform = `translate3d(${e.clientX - 10}px, ${e.clientY - 10}px, 0)`;
         });
 
-        // Interactive scaling
-        const interactables = document.querySelectorAll('a, button, .liquid-glass');
-        interactables.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(4)';
-                cursor.style.opacity = '0.2';
+        // Cursor Scaling on interactables
+        const links = document.querySelectorAll('a, button, .glass');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform += ' scale(4)';
+                cursor.style.opacity = '0.3';
             });
-            item.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = cursor.style.transform.replace(' scale(4)', '');
                 cursor.style.opacity = '1';
             });
         });
