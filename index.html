@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iamsekandar — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(6)-Photoroom.png?updatedAt=1766103320552">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            black: "#000000",
+            white: "#ffffff",
+            gray: {
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+          },
+          fontFamily: {
+            display: ["Spline Sans", "sans-serif"],
+            mono: ["Spline Sans Mono", "monospace"],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .floating-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin: 10px;
+      padding: 10px 0;
+      max-width: calc(100% - 20px);
+    }
+    
+    .rounded-btn {
+      border-radius: 50px;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-display antialiased">
+<div class="min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <header class="floating-header">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(5)-Photoroom.png?updatedAt=1766103093948" alt="Logo" class="h-10 w-10">
+        <span class="font-semibold tracking-widest text-sm">iamsekandar</span>
+      </div>
+
+      <nav class="hidden md:flex gap-10 text-sm text-gray-400">
+      </nav>
+
+      <button class="border border-white px-6 py-2 text-sm tracking-widest hover:bg-white hover:text-black transition rounded-btn" onclick="window.open('https://wa.me/971564735275', '_blank')">
+        CONNECT NOW
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow max-w-[1440px] mx-auto px-6 lg:px-12 py-24 pt-32">
+
+    <!-- META -->
+    <p class="font-mono text-xs tracking-widest text-gray-400 mb-24 border-l border-gray-700 pl-4">
+      01 / about Mr.
+    </p>
+
+    <!-- HERO -->
+    <h1 class="text-[clamp(3rem,7vw,7rem)] font-semibold tracking-tight leading-[0.95] max-w-[90%] mb-32">
+      <span class="text-white">iamsekandar.</span><span class="text-gray-500">visionary</span><br/>
+      <span class="text-white">.innovator</span>
+    </h1>
+
+    <!-- GRID -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-24 border-t border-gray-800 pt-16">
+
+      <!-- LEFT -->
+      <div class="lg:col-span-8 space-y-16">
+
+        <div>
+          <h2 class="text-4xl font-semibold uppercase mb-6">Design Philosophy</h2>
+          <p class="text-gray-400 text-lg max-w-[800px] leading-relaxed">
+            The Luxury of Silence. In an era of notification overload, true luxury is the absence of noise.
+            Nexus OS strips interfaces down to structure, intent, and clarity.
+          </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">diamond</span>
+            <h3 class="uppercase font-semibold tracking-wider">Utility First</h3>
+            <p class="text-gray-400 text-sm">Every pixel has a purpose.</p>
+          </div>
+
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">grid_4x4</span>
+            <h3 class="uppercase font-semibold tracking-wider">Swiss Grid</h3>
+            <p class="text-gray-400 text-sm">Mathematical precision.</p>
+          </div>
+
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">contrast</span>
+            <h3 class="uppercase font-semibold tracking-wider">Monochrome</h3>
+            <p class="text-gray-400 text-sm">Contrast over color.</p>
+          </div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="relative h-[420px] overflow-hidden border border-gray-800">
+          <img class="w-full h-full object-cover grayscale contrast-125" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+          <div class="absolute bottom-0 left-0 w-full p-6 bg-black/70">
+            <p class="font-mono text-xs text-gray-400">FIG 1.0 — MATERIALITY</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="lg:col-span-4 lg:border-l lg:border-gray-800 lg:pl-12 space-y-12">
+
+        <button class="w-full border border-white py-4 tracking-widest hover:bg-white hover:text-black transition rounded-btn" onclick="window.open('https://about.sekandar.dev', '_blank')">
+          ABOUT MR.
+        </button>
+
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+
+
+</div>
+</body>
+</html>
