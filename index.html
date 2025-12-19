@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXUS OS — Portfolio</title>
+  <title>iamsekandar — Portfolio</title>
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(6)-Photoroom.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,8 +41,63 @@
           },
         },
       },
+      plugins: [
+        function({ addUtilities }) {
+          const newUtilities = {
+            '.bg-clip-text': {
+              'background-clip': 'text',
+            },
+          };
+          addUtilities(newUtilities);
+        },
+      ],
     }
   </script>
+  <style>
+    /* From Uiverse.io by reglobby */ 
+    .user-profile {
+      width: 131px;
+      height: 51px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      background: linear-gradient(
+        to bottom right,
+        #2e8eff 0%,
+        rgba(46, 142, 255, 0) 30%
+      );
+      background-color: rgba(46, 142, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .user-profile:hover,
+    .user-profile:focus {
+      background-color: rgba(46, 142, 255, 0.7);
+      box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
+      outline: none;
+    }
+
+    .user-profile-inner {
+      width: 127px;
+      height: 47px;
+      border-radius: 13px;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .user-profile-inner svg {
+      width: 27px;
+      height: 27px;
+      fill: #fff;
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white font-display antialiased">
@@ -51,8 +107,8 @@
   <header class="border-b border-gray-800">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-gray-400">grid_view</span>
-        <span class="font-semibold tracking-widest text-sm">NEXUS OS</span>
+        <img src="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(3)-Photoroom.png" alt="Logo" class="h-16 w-16">
+        <span class="font-semibold tracking-widest text-sm">iamsekandar</span>
       </div>
 
       <nav class="hidden md:flex gap-10 text-sm text-gray-400">
@@ -61,9 +117,29 @@
         <a class="hover:text-white transition">CONTACT</a>
       </nav>
 
-      <button class="border border-white px-6 py-2 text-sm tracking-widest hover:bg-white hover:text-black transition">
-        DOWNLOAD KIT
-      </button>
+      <!-- From Uiverse.io by reglobby --> 
+      <div
+        aria-label="User Login Button"
+        tabindex="0"
+        role="button"
+        class="user-profile"
+        onclick="window.open('https://wa.me/971564735275', '_blank')"
+      >
+        <div class="user-profile-inner">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g data-name="Layer 2" id="Layer_2">
+              <path
+                d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+              ></path>
+            </g>
+          </svg>
+          <p>Connect</p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -76,9 +152,9 @@
     </p>
 
     <!-- HERO -->
-    <h1 class="text-[clamp(3rem,7vw,7rem)] font-semibold tracking-tight leading-[0.95] max-w-[90%] mb-32">
-      The interface <span class="text-gray-500">vanishes</span> the moment the user begins to
-      <span class="underline underline-offset-8 decoration-gray-600">create</span>.
+    <h1 class="text-[clamp(3rem,7vw,7rem)] font-bold tracking-tight leading-[0.95] max-w-[90%] mb-32 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-gray-500">
+      iamsekandar<span class="text-gray-400">.</span>visionary<br>
+      <span class="text-gray-400">.</span>innovator
     </h1>
 
     <!-- GRID -->
@@ -151,9 +227,7 @@
           </ul>
         </div>
 
-        <button class="w-full border border-white py-4 tracking-widest hover:bg-white hover:text-black transition">
-          VIEW PROTOTYPE →
-        </button>
+
 
       </aside>
 
