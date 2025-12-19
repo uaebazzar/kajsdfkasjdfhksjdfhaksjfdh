@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iamsekandar — Portfolio</title>
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(6)-Photoroom.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            black: "#000000",
+            white: "#ffffff",
+            gray: {
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+          },
+          fontFamily: {
+            display: ["Spline Sans", "sans-serif"],
+            mono: ["Spline Sans Mono", "monospace"],
+          },
+        },
+      },
+      plugins: [
+        function({ addUtilities }) {
+          const newUtilities = {
+            '.bg-clip-text': {
+              'background-clip': 'text',
+            },
+          };
+          addUtilities(newUtilities);
+        },
+      ],
+    }
+  </script>
+  <style>
+    /* From Uiverse.io by reglobby */ 
+    .user-profile {
+      width: 131px;
+      height: 51px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      background: linear-gradient(
+        to bottom right,
+        #2e8eff 0%,
+        rgba(46, 142, 255, 0) 30%
+      );
+      background-color: rgba(46, 142, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .user-profile:hover,
+    .user-profile:focus {
+      background-color: rgba(46, 142, 255, 0.7);
+      box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
+      outline: none;
+    }
+
+    .user-profile-inner {
+      width: 127px;
+      height: 47px;
+      border-radius: 13px;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .user-profile-inner svg {
+      width: 27px;
+      height: 27px;
+      fill: #fff;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-display antialiased">
+<div class="min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <header class="border-b border-gray-800">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(3)-Photoroom.png" alt="Logo" class="h-16 w-16">
+        <span class="font-semibold tracking-widest text-sm">iamsekandar</span>
+      </div>
+
+      <nav class="hidden md:flex gap-10 text-sm text-gray-400">
+        <a class="hover:text-white transition">PROJECTS</a>
+        <a class="hover:text-white transition">ABOUT</a>
+        <a class="hover:text-white transition">CONTACT</a>
+      </nav>
+
+      <!-- From Uiverse.io by reglobby --> 
+      <div
+        aria-label="User Login Button"
+        tabindex="0"
+        role="button"
+        class="user-profile"
+        onclick="window.open('https://wa.me/971564735275', '_blank')"
+      >
+        <div class="user-profile-inner">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g data-name="Layer 2" id="Layer_2">
+              <path
+                d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+              ></path>
+            </g>
+          </svg>
+          <p>Connect</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+
+    <!-- META -->
+    <p class="font-mono text-xs tracking-widest text-gray-400 mb-24 border-l border-gray-700 pl-4">
+      01 / ARCHITECTURAL VISION
+    </p>
+
+    <!-- HERO -->
+    <h1 class="text-[clamp(3rem,7vw,7rem)] font-bold tracking-tight leading-[0.95] max-w-[90%] mb-32 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-gray-500">
+      iamsekandar<span class="text-gray-400">.</span>visionary<br>
+      <span class="text-gray-400">.</span>innovator
+    </h1>
+
+    <!-- GRID -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-24 border-t border-gray-800 pt-16">
+
+      <!-- LEFT -->
+      <div class="lg:col-span-8 space-y-16">
+
+        <div>
+          <h2 class="text-4xl font-semibold uppercase mb-6">Design Philosophy</h2>
+          <p class="text-gray-400 text-lg max-w-[800px] leading-relaxed">
+            The Luxury of Silence. In an era of notification overload, true luxury is the absence of noise.
+            Nexus OS strips interfaces down to structure, intent, and clarity.
+          </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">diamond</span>
+            <h3 class="uppercase font-semibold tracking-wider">Utility First</h3>
+            <p class="text-gray-400 text-sm">Every pixel has a purpose.</p>
+          </div>
+
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">grid_4x4</span>
+            <h3 class="uppercase font-semibold tracking-wider">Swiss Grid</h3>
+            <p class="text-gray-400 text-sm">Mathematical precision.</p>
+          </div>
+
+          <div class="border border-gray-800 p-8 space-y-4 hover:border-white transition">
+            <span class="material-symbols-outlined text-gray-400">contrast</span>
+            <h3 class="uppercase font-semibold tracking-wider">Monochrome</h3>
+            <p class="text-gray-400 text-sm">Contrast over color.</p>
+          </div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="relative h-[420px] overflow-hidden border border-gray-800">
+          <img class="w-full h-full object-cover grayscale contrast-125" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+          <div class="absolute bottom-0 left-0 w-full p-6 bg-black/70">
+            <p class="font-mono text-xs text-gray-400">FIG 1.0 — MATERIALITY</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="lg:col-span-4 lg:border-l lg:border-gray-800 lg:pl-12 space-y-12">
+
+        <div>
+          <p class="font-mono text-xs tracking-widest text-gray-500 mb-6">TECHNICAL EXECUTION</p>
+          <ul class="space-y-6 text-sm">
+            <li>
+              <p class="text-gray-500 font-mono text-xs">FRAMEWORK</p>
+              React / WebGL
+            </li>
+            <li>
+              <p class="text-gray-500 font-mono text-xs">TYPOGRAPHY</p>
+              Spline Sans Mono
+            </li>
+            <li>
+              <p class="text-gray-500 font-mono text-xs">GRID</p>
+              12 Column Fluid
+            </li>
+            <li>
+              <p class="text-gray-500 font-mono text-xs">VERSION</p>
+              Alpha v0.9
+            </li>
+          </ul>
+        </div>
+
+
+
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 py-8">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex justify-between text-xs font-mono text-gray-500">
+      <span>© 2024 NEXUS SYSTEMS</span>
+      <div class="flex gap-6">
+        <a class="hover:text-white">INSTAGRAM</a>
+        <a class="hover:text-white">TWITTER</a>
+        <a class="hover:text-white">LINKEDIN</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
