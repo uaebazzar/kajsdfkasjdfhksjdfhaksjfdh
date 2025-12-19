@@ -356,11 +356,11 @@
             // If near the bottom (within 100px)
             if (scrollTop + windowHeight >= documentHeight - 100) {
                 socialDock.style.opacity = '0';
-                socialDock.style.transform = 'translateY(20px)';
+                socialDock.style.transform = 'translateX(-50%) translateY(20px)';
                 socialDock.style.transition = 'all 0.3s ease';
             } else {
                 socialDock.style.opacity = '1';
-                socialDock.style.transform = 'translateY(0)';
+                socialDock.style.transform = 'translateX(-50%) translateY(0)';
             }
         });
     </script>
