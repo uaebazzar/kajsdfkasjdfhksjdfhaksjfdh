@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sekandar — Digital Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --liquid-blur: blur(40px);
+        }
+
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Pure Liquid Glass Class */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: var(--liquid-blur) saturate(180%);
+            -webkit-backdrop-filter: var(--liquid-blur) saturate(180%);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .glass:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Cursor Logic */
+        #cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.15s ease-out;
+        }
+
+        /* Smooth Section Layout */
+        section {
+            padding: 120px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Social Dock */
+        .social-dock {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 24px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            font-size: 20px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-8px);
+            background: #fff;
+            color: #000;
+        }
+
+        /* Buttons */
+        .btn-main {
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cursor"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg glass flex items-center justify-center font-bold italic">S</div>
+                <span class="tracking-widest text-xs font-bold opacity-70">SEKANDAR.DEV</span>
+            </div>
+            <div class="glass px-8 py-3 rounded-full hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
+                <a href="#work" class="hover:opacity-100 transition">Work</a>
+                <a href="#about" class="hover:opacity-100 transition">About</a>
+                <a href="#contact" class="hover:opacity-100 transition">Contact</a>
+            </div>
+            <button onclick="window.open('https://wa.me/971564735275')" class="glass btn-main hover:bg-white hover:text-black">
+                Connect
+            </button>
+        </div>
+    </nav>
+
+    <div class="social-dock glass">
+        <a href="#" class="social-icon glass"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#" class="social-icon glass"><i class="ph ph-twitter-logo"></i></a>
+        <a href="#" class="social-icon glass"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="social-icon glass"><i class="ph ph-github-logo"></i></a>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-6">
+        
+        <section class="min-h-screen flex flex-col justify-center">
+            <div class="inline-flex items-center gap-2 mb-8 glass px-4 py-1.5 rounded-full w-fit">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-mono uppercase tracking-widest opacity-60">Available for projects</span>
+            </div>
+            <h1 class="text-[clamp(3rem,10vw,7.5rem)] font-extrabold leading-[0.9] tracking-tighter text-gradient mb-10">
+                #Sekandar the <br/> DIGITAL FUTURE
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl font-light leading-relaxed">
+                Sekandar is a personal brand focused on building digital products, modern brands, and solutions with long-term vision.
+            </p>
+        </section>
+
+        <section id="work">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <h2 class="text-5xl font-bold tracking-tighter">Skills</h2>
+                
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-10 rounded-[32px] space-y-6">
+                    <i class="ph ph-device-mobile text-4xl opacity-40"></i>
+                    <h3 class="text-2xl font-bold">App Dev</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">Expertise in developing native and cross-platform mobile applications with intuitive user interfaces and seamless functionality across iOS and Android platforms.</p>
+                </div>
+                <div class="glass p-10 rounded-[32px] space-y-6">
+                    <i class="ph ph-code text-4xl opacity-40"></i>
+                    <h3 class="text-2xl font-bold">Web Dev</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">Proficient in modern web technologies including HTML5, CSS3, JavaScript, and frameworks like React.js to create responsive and interactive websites with optimal performance.</p>
+                </div>
+                <div class="glass p-10 rounded-[32px] space-y-6">
+                    <i class="ph ph-briefcase text-4xl opacity-40"></i>
+                    <h3 class="text-2xl font-bold">Business</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">Strategic business development with expertise in market analysis, brand positioning, and sustainable growth models for innovative ventures in the digital economy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="glass rounded-[48px] overflow-hidden group relative">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="w-full h-[600px] object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" alt="Materiality">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-12 left-12">
+                    <p class="font-mono text-xs opacity-50 uppercase tracking-[0.3em] mb-4">Case Study</p>
+                    <h3 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8">Sekandar — <br/>Digital Innovation.</h3>
+                    <button class="glass btn-main hover:bg-white hover:text-black" onclick="window.open('https://project.sekandar.dev')">View Project</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="text-center py-40 border-none">
+            <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-gradient mb-12 italic">LET'S TALK.</h2>
+            <p class="text-gray-500 mb-12 max-w-xl mx-auto">Whether you have a question or a project in mind, my inbox is always open for visionaries.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="window.open('https://about.sekandar.dev')" class="glass btn-main px-12 py-6">About</button>
+                <button onclick="window.open('https://wa.me/971564735275')" class="bg-white text-black btn-main px-12 py-6">WhatsApp</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 text-center opacity-30 text-[10px] font-mono tracking-[0.5em] uppercase">
+        © 2025 Sekandar Brand — All Rights Reserved
+    </footer>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        
+        // Smooth Cursor Movement
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate3d(${e.clientX - 10}px, ${e.clientY - 10}px, 0)`;
+        });
+
+        // Cursor Scaling on interactables
+        const links = document.querySelectorAll('a, button, .glass');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform += ' scale(4)';
+                cursor.style.opacity = '0.3';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = cursor.style.transform.replace(' scale(4)', '');
+                cursor.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
