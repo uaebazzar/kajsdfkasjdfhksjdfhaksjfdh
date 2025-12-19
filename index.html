@@ -205,11 +205,11 @@
 
         <section id="work">
             <div class="max-w-4xl mx-auto text-center py-20">
-                <h2 class="text-5xl font-bold tracking-tighter mb-8">Sekandar Digital</h2>
+                <h2 class="text-5xl font-bold tracking-tighter mb-8">Sekandar <span class="text-yellow-400">Digital</span></h2>
                 <p class="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
-                    We are a forward-thinking digital studio crafting immersive experiences at the intersection of design and technology. 
-                    Our approach combines aesthetic excellence with technical innovation to deliver solutions that resonate with audiences 
-                    and drive measurable results. From concept to deployment, we transform ideas into compelling digital realities.
+                    Sekandar is a personal brand currently in development, created to make things simpler and more accessible in the digital space. Built around clarity, creativity, and ease, Sekandar is designed to help you do more with less effort.
+                    This exciting digital journey will be announced soon.
+                    Thank you for your constant support and love.
                 </p>
             </div>
         </section>
@@ -344,6 +344,24 @@
         document.addEventListener('click', () => {
             isAutoScrolling = false;
             clearTimeout(scrollTimeout);
+        });
+        
+        // Hide social icons when scrolled to bottom
+        const socialDock = document.querySelector('.social-dock');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // If near the bottom (within 100px)
+            if (scrollTop + windowHeight >= documentHeight - 100) {
+                socialDock.style.opacity = '0';
+                socialDock.style.transform = 'translateY(20px)';
+                socialDock.style.transition = 'all 0.3s ease';
+            } else {
+                socialDock.style.opacity = '1';
+                socialDock.style.transform = 'translateY(0)';
+            }
         });
     </script>
 </body>
