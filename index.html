@@ -103,6 +103,60 @@
             text-transform: uppercase;
             transition: all 0.3s;
         }
+        
+        /* Glow effect for Connect button */
+        .connect-btn-glow {
+            position: relative;
+            overflow: visible;
+        }
+        
+        .connect-btn-glow::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 100px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .connect-btn-glow:hover::before {
+            opacity: 1;
+            filter: blur(8px);
+        }
+        
+        /* Ultra Modern Visible Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6));
+            border-radius: 10px;
+        }
+        
+        /* Firefox scrollbar */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.03);
+        }
     </style>
 </head>
 <body>
@@ -120,7 +174,7 @@
                 <a href="#about" class="hover:opacity-100 transition">About</a>
                 <a href="#contact" class="hover:opacity-100 transition">Contact</a>
             </div>
-            <button onclick="window.open('https://wa.me/971564735275')" class="glass btn-main hover:bg-white hover:text-black">
+            <button onclick="window.open('https://wa.me/971564735275')" class="bg-white text-black btn-main connect-btn-glow">
                 Connect
             </button>
         </div>
@@ -135,7 +189,7 @@
 
     <main class="max-w-7xl mx-auto px-6">
         
-        <section class="min-h-screen flex flex-col justify-center">
+        <section id="home" class="min-h-screen flex flex-col justify-center">
             <div class="inline-flex items-center gap-2 mb-8 glass px-4 py-1.5 rounded-full w-fit">
                 <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                 <span class="text-[10px] font-mono uppercase tracking-widest opacity-60">Available for projects</span>
@@ -149,31 +203,17 @@
         </section>
 
         <section id="work">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-                <h2 class="text-5xl font-bold tracking-tighter">Skills</h2>
-                
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass p-10 rounded-[32px] space-y-6">
-                    <i class="ph ph-device-mobile text-4xl opacity-40"></i>
-                    <h3 class="text-2xl font-bold">App Dev</h3>
-                    <p class="text-gray-400 leading-relaxed font-light">Expertise in developing native and cross-platform mobile applications with intuitive user interfaces and seamless functionality across iOS and Android platforms.</p>
-                </div>
-                <div class="glass p-10 rounded-[32px] space-y-6">
-                    <i class="ph ph-code text-4xl opacity-40"></i>
-                    <h3 class="text-2xl font-bold">Web Dev</h3>
-                    <p class="text-gray-400 leading-relaxed font-light">Proficient in modern web technologies including HTML5, CSS3, JavaScript, and frameworks like React.js to create responsive and interactive websites with optimal performance.</p>
-                </div>
-                <div class="glass p-10 rounded-[32px] space-y-6">
-                    <i class="ph ph-briefcase text-4xl opacity-40"></i>
-                    <h3 class="text-2xl font-bold">Business</h3>
-                    <p class="text-gray-400 leading-relaxed font-light">Strategic business development with expertise in market analysis, brand positioning, and sustainable growth models for innovative ventures in the digital economy.</p>
-                </div>
+            <div class="max-w-4xl mx-auto text-center py-20">
+                <h2 class="text-5xl font-bold tracking-tighter mb-8">Sekandar Digital</h2>
+                <p class="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                    We are a forward-thinking digital studio crafting immersive experiences at the intersection of design and technology. 
+                    Our approach combines aesthetic excellence with technical innovation to deliver solutions that resonate with audiences 
+                    and drive measurable results. From concept to deployment, we transform ideas into compelling digital realities.
+                </p>
             </div>
         </section>
 
-        <section>
+        <section id="about">
             <div class="glass rounded-[48px] overflow-hidden group relative">
                 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="w-full h-[600px] object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" alt="Materiality">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
@@ -220,6 +260,70 @@
                 cursor.style.opacity = '1';
             });
         });
+        
+        // Auto-scroll functionality
+        let scrollTimeout;
+        let isAutoScrolling = true;
+        
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start',
+                    inline: 'nearest'
+                });
+            }
+        }
+        
+        function startAutoScroll() {
+            // Scroll to home initially
+            setTimeout(() => {
+                if (isAutoScrolling) {
+                    scrollToSection('work');
+                    
+                    // After 2 seconds, scroll to about
+                    setTimeout(() => {
+                        if (isAutoScrolling) {
+                            scrollToSection('about');
+                            
+                            // After 2 seconds, scroll to contact
+                            setTimeout(() => {
+                                if (isAutoScrolling) {
+                                    scrollToSection('contact');
+                                    
+                                    // After 2 seconds, scroll back to home
+                                    setTimeout(() => {
+                                        if (isAutoScrolling) {
+                                            scrollToSection('home');
+                                            
+                                            // Stop auto-scrolling after completing the cycle
+                                            isAutoScrolling = false;
+                                        }
+                                    }, 2000);
+                                }
+                            }, 2000);
+                        }
+                    }, 2000);
+                }
+            }, 2000);
+        }
+        
+        // Start auto-scrolling when page loads
+        window.addEventListener('load', startAutoScroll);
+        
+        // Stop auto-scrolling if user manually scrolls
+        window.addEventListener('wheel', () => {
+            isAutoScrolling = false;
+            clearTimeout(scrollTimeout);
+        });
+        
+        // Stop auto-scrolling if user clicks anywhere
+        document.addEventListener('click', () => {
+            isAutoScrolling = false;
+            clearTimeout(scrollTimeout);
+        });
     </script>
+    <div class="w-full h-0.5 bg-white opacity-60 mt-20"></div>
 </body>
 </html>
