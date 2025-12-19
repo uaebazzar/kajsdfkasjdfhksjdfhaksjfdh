@@ -49,6 +49,7 @@
             z-index: 9999;
             mix-blend-mode: difference;
             transition: transform 0.15s ease-out;
+            opacity: 0;
         }
 
         /* Smooth Section Layout */
@@ -181,10 +182,10 @@
     </nav>
 
     <div class="social-dock glass">
-        <a href="#" class="social-icon glass"><i class="ph ph-instagram-logo"></i></a>
-        <a href="#" class="social-icon glass"><i class="ph ph-twitter-logo"></i></a>
-        <a href="#" class="social-icon glass"><i class="ph ph-linkedin-logo"></i></a>
-        <a href="#" class="social-icon glass"><i class="ph ph-github-logo"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-icon glass"><i class="ph ph-instagram-logo text-xl"></i></a>
+        <a href="https://twitter.com" target="_blank" class="social-icon glass"><i class="ph ph-twitter-logo text-xl"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon glass"><i class="ph ph-linkedin-logo text-xl"></i></a>
+        <a href="https://github.com" target="_blank" class="social-icon glass"><i class="ph ph-github-logo text-xl"></i></a>
     </div>
 
     <main class="max-w-7xl mx-auto px-6">
@@ -242,22 +243,43 @@
 
     <script>
         const cursor = document.getElementById('cursor');
+        let cursorVisible = false;
+        let cursorTimeout;
         
-        // Smooth Cursor Movement
+        // Show cursor on first mousemove
         document.addEventListener('mousemove', (e) => {
+            if (!cursorVisible) {
+                cursor.style.opacity = '1';
+                cursorVisible = true;
+            }
             cursor.style.transform = `translate3d(${e.clientX - 10}px, ${e.clientY - 10}px, 0)`;
+        });
+
+        // Hide cursor after 3 seconds of inactivity
+        document.addEventListener('mousemove', () => {
+            clearTimeout(cursorTimeout);
+            if (cursorVisible) {
+                cursorTimeout = setTimeout(() => {
+                    cursor.style.opacity = '0';
+                    cursorVisible = false;
+                }, 3000);
+            }
         });
 
         // Cursor Scaling on interactables
         const links = document.querySelectorAll('a, button, .glass');
         links.forEach(link => {
             link.addEventListener('mouseenter', () => {
-                cursor.style.transform += ' scale(4)';
-                cursor.style.opacity = '0.3';
+                if (cursorVisible) {
+                    cursor.style.transform += ' scale(4)';
+                    cursor.style.opacity = '0.3';
+                }
             });
             link.addEventListener('mouseleave', () => {
-                cursor.style.transform = cursor.style.transform.replace(' scale(4)', '');
-                cursor.style.opacity = '1';
+                if (cursorVisible) {
+                    cursor.style.transform = cursor.style.transform.replace(' scale(4)', '');
+                    cursor.style.opacity = '1';
+                }
             });
         });
         
@@ -324,6 +346,5 @@
             clearTimeout(scrollTimeout);
         });
     </script>
-    <div class="w-full h-0.5 bg-white opacity-60 mt-20"></div>
 </body>
 </html>
