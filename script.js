@@ -24,37 +24,31 @@ interactables.forEach(link => {
     });
 });
 
-// 3. Auto-Scroll Intro
-let isAutoScrolling = true;
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section && isAutoScrolling) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-async function runAutoScroll() {
-    const sequence = ['work', 'about', 'contact', 'home'];
-    for (const id of sequence) {
-        if (!isAutoScrolling) break;
-        await new Promise(res => setTimeout(res, 2500));
-        scrollToSection(id);
-        if (id === 'home') isAutoScrolling = false;
-    }
-}
-
-window.addEventListener('load', runAutoScroll);
-
-// Stop auto-scroll on user activity
-['wheel', 'click', 'keydown'].forEach(evt => {
-    window.addEventListener(evt, () => isAutoScrolling = false, { once: true });
-});
-
-// 4. Hide Social Dock at Footer
+// 4. Hide Social Dock at Footer and Header after 3rd page
 const socialDock = document.querySelector('.social-dock');
+const header = document.querySelector('nav');
+const aboutSection = document.getElementById('about');
+
 window.addEventListener('scroll', () => {
+    // Hide social dock at footer
     const isAtBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
     socialDock.style.opacity = isAtBottom ? '0' : '1';
     socialDock.style.transform = isAtBottom ? 'translateX(-50%) translateY(20px)' : 'translateX(-50%)';
+    
+    // Hide header after 3rd page with modern animation
+    if (aboutSection) {
+        const aboutSectionTop = aboutSection.offsetTop;
+        const scrollPosition = window.scrollY;
+        
+        if (scrollPosition > aboutSectionTop) {
+            header.style.opacity = '0';
+            header.style.transform = 'translateY(-100%) scale(0.95)';
+            header.style.pointerEvents = 'none';
+        } else {
+            header.style.opacity = '1';
+            header.style.transform = 'translateY(0) scale(1)';
+            header.style.pointerEvents = 'auto';
+        }
+    }
 });
