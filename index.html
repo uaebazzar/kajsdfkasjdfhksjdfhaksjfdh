@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sekandar — Digital Architect</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="icon" type="image/png" href="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(6)-Photoroom.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cursor"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://ik.imagekit.io/zbjvyzypz/Lilac%20Clean%20Modern%20Monogram%20Initial%20S%20Letter%20Logo%20(5)-Photoroom.png" alt="Logo" class="w-8 h-8 rounded-lg glass">
+                <span class="tracking-widest text-xs font-bold opacity-70">SEKANDAR.DEV</span>
+            </div>
+            <div class="glass px-8 py-3 rounded-full hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
+                <a href="#work" class="hover:opacity-100 transition">Work</a>
+                <a href="#about" class="hover:opacity-100 transition">Partnership</a>
+                <a href="#contact" class="hover:opacity-100 transition">Contact</a>
+            </div>
+            <button class="glowbutton" onclick="window.open('https://wa.me/971564735275')">
+  Connect
+</button>
+        </div>
+    </nav>
+
+    <div class="social-dock glass">
+        <a href="https://www.instagram.com/sekandar.samadi" target="_blank" class="social-icon glass"><i class="ph ph-instagram-logo text-xl"></i></a>
+        <a href="https://x.com/Sekandarsamadi" target="_blank" class="social-icon glass"><i class="ph ph-twitter-logo text-xl"></i></a>
+        <a href="https://www.linkedin.com/in/sekandar-samadi-2153343a1" target="_blank" class="social-icon glass"><i class="ph ph-linkedin-logo text-xl"></i></a>
+        <a href="https://github.com/uaebazzar" target="_blank" class="social-icon glass"><i class="ph ph-github-logo text-xl"></i></a>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-6">
+        <section id="home" class="min-h-screen flex flex-col justify-center">
+            <div class="inline-flex items-center gap-2 mb-8 glass px-4 py-1.5 rounded-full w-fit">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-mono uppercase tracking-widest opacity-60">Available for projects</span>
+            </div>
+            <h1 class="text-[clamp(3rem,10vw,7.5rem)] font-extrabold leading-[0.9] tracking-tighter mb-10">
+                <span class="text-gradient">#Sekandar the</span> <br/> <span style="color: #fbbf24;">DIGITAL</span> <span style="color: #60a5fa;">FUTURE</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl font-light leading-relaxed">
+                Sekandar is a personal brand focused on building digital products, modern brands, and solutions with long-term vision.
+            </p>
+        </section>
+
+        <section id="work">
+            <div class="max-w-4xl mx-auto text-center py-20">
+                <h2 class="text-5xl font-bold tracking-tighter mb-8">Sekandar <span class="text-yellow-400">Digital</span></h2>
+                <p class="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                    Sekandar is a personal brand currently in development, created to make things simpler and more accessible in the digital space.
+                </p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="glass rounded-[48px] overflow-hidden group relative">
+                <img src="https://ik.imagekit.io/zbjvyzypz/istockphoto-1309800198-612x612.jpg" class="w-full h-[600px] object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" alt="Materiality">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-12 left-12">
+                    <p class="font-mono text-xs opacity-50 uppercase tracking-[0.3em] mb-4">Case Study</p>
+                    <h3 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8">Sekandar — <br/>Digital Innovation.</h3>
+                    <button class="arrow-button" onclick="window.open('https://project.sekandar.dev')">
+  View Project
+  <div class="arrow-wrapper">
+    <div class="arrow"></div>
+  </div>
+</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="text-center py-40 border-none">
+            <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-gradient mb-12 italic">LET'S TALK.</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="arrow-button" onclick="window.open('https://partnership.sekandar.dev')">
+  Partnership
+  <div class="arrow-wrapper">
+    <div class="arrow"></div>
+  </div>
+</button>
+                <button class="arrow-button" onclick="window.open('https://wa.me/971564735275')">
+  WhatsApp
+  <div class="arrow-wrapper">
+    <div class="arrow"></div>
+  </div>
+</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 text-center opacity-30 text-[10px] font-mono tracking-[0.5em] uppercase">
+        © 2025 Sekandar Brand — All Rights Reserved
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
