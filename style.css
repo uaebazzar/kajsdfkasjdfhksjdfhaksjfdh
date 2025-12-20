@@ -13,6 +13,11 @@ body {
     cursor: none;
 }
 
+nav {
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform-origin: top center;
+}
+
 /* Glassmorphism Classes */
 .glass {
     background: var(--glass);
